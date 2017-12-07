@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+	background-color: #57D9A1;
+	font-family: 'Raleway', sans-serif;
+	font-size: 24px;
+}
+
+main {
+	padding: 10px;
+	position: absolute;
+	left: 35%;
+	width: 30%;
+	background-color: #E8A480;
+	border-radius: 10px;
+	border-bottom: 3px solid #9B603C;
+	border-top: 3px solid #FEBE94;
+}
+
+button.option {
+	border-radius: 100px;
+	width: 25px;
+	height: 25px;
+	background-color: white;
+	border: 2px solid black;
+	margin-right: 5px;
+}
+
+button.pin {
+	border-radius: 100px;
+	width: 15px;
+	height: 15px;
+	position: relative;
+	background-color: gray;
+	bottom: 5px;
+	border: 2px solid black;
+}
+
+p {
+	margin: 7px;
+}
+
+button.start {
+	background-color: #57D9A1;
+	border: 2px solid black;
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+.dis {
+	background-color: gray !important;
+}
+
+.red {
+	background-color: red !important;
+}
+
+.blue {
+	background-color: blue !important;
+}
+
+.yellow {
+	background-color: yellow !important;
+}
+
+.purple {
+	background-color: purple !important;
+}
+
+.green {
+	background-color: green !important;
+}
+
+.orange {
+	background-color: orange !important;
+}
+
+.black {
+	background-color: black !important;
+}
+
+.white {
+	background-color: white !important;
+}

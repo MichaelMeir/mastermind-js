@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MasterMind-JS</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<main>
+		
+		<p>MasterMind-JS<p>
+		<p id="log"></p>
+
+		<div id="colorSelection">
+			<button class="option red" onclick="setColor(1);"></button>
+			<button class="option blue" onclick="setColor(2);"></button>
+			<button class="option yellow" onclick="setColor(3);"></button>
+			<button class="option purple" onclick="setColor(4);"></button>
+			<button class="option green" onclick="setColor(5);"></button>
+			<button class="option orange" onclick="setColor(6);"></button>
+			<button class="start" onclick="nextRow();">Next Row</button>
+		</div>
+
+		<button class="start" onclick="start();" id="start">Start</button>
+
+		<div id="board">
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="Core.js"></script>
+
+</body>
+</html>
