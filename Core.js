@@ -114,7 +114,12 @@ function nextRow() {
 		selectedPoint = null;
 		currentRow++;
 		if(currentRow >= 12) {
-			document.getElementById("log").innerHTML = "You've lost!";
+			document.getElementById("log").innerHTML = "You've lost! the answer was ";
+			
+			for(var i = 0; i < answer.length; i++) {
+				document.getElementById("log").innerHTML += answer[i] + " ";
+			}
+
 			document.getElementById("rowButton").innerHTML = "Restart";
 			document.getElementById("rowButton").setAttribute("onclick", "start();");
 		}
