@@ -98,6 +98,7 @@ function checkAnswer() {
 
 function nextRow() {
 	if(!checkAnswer()) {
+		selectedPoint = null;
 		currentRow++;
 		for(var i = 0; i < 4; i++) {
 			document.getElementById(currentRow + "r" + i).setAttribute("class", "option");
