@@ -57,23 +57,36 @@ function checkAnswer() {
 	var bp = 0;
 	var wp = 0;
 
+	var checked = [false, false, false, false];
+	var pointChecked = [false, false, false, false];
+
 	for(var i = 0; i < 4; i++) {
 
 		var c = document.getElementById(currentRow + "r" + i);
 
 		if(c == null) {return;}
 
-
 		if(c.getAttribute("class").includes(answer[i])) {
 			bp++;
+			checked[i] = true;
+			pointChecked[i] = true;
 			console.log(i);
-		}else{
-			for(var j = 0; j < 4; j++) {
-				if(c.getAttribute("class").includes(answer[j])) {
-					wp++;
-					break;
-					console.log(i);
-				}
+		}
+	}
+
+	for(var i = 0; i < 4; i++) {
+
+		var c = document.getElementById(currentRow + "r" + i);
+
+		if(c == null) {return;}
+
+		for(var j = 0; j < 4; j++) {
+			if(c.getAttribute("class").includes(answer[j]) && !checked[j] && !pointChecked[i]) {
+				wp++;
+				checked[j] = true;
+				pointChecked[i] = true;
+				break;
+				console.log(i);
 			}
 		}
 	}
