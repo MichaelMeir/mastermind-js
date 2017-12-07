@@ -113,6 +113,11 @@ function nextRow() {
 	if(!checkAnswer()) {
 		selectedPoint = null;
 		currentRow++;
+		if(currentRow >= 12) {
+			document.getElementById("log").innerHTML = "You've lost!";
+			document.getElementById("rowButton").innerHTML = "Restart";
+			document.getElementById("rowButton").setAttribute("onclick", "start();");
+		}
 		for(var i = 0; i < 4; i++) {
 			document.getElementById(currentRow + "r" + i).setAttribute("class", "option");
 		}
