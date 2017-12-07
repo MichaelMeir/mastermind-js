@@ -4,12 +4,17 @@ var answer;
 var currentRow = -1;
 
 function start() {
+	currentRow = -1;
+	document.getElementById("log").innerHTML = "";
 	answer = [];
 	for(var i = 0; i < 4; i++) {
 		answer[i] = getRandomColor();
 	}
 
 	document.getElementById("start").style.display = "none";
+
+	document.getElementById("rowButton").innerHTML = "Next Row";
+	document.getElementById("rowButton").setAttribute("onclick", "nextRow();");
 
 	document.getElementById("board").innerHTML = "";
 	var boardPoints = "";
@@ -56,12 +61,18 @@ function checkAnswer() {
 
 		var c = document.getElementById(currentRow + "r" + i);
 
-		if(c != null) {
-			for(var j = 0; j < answer.length; j++) {
-				if(j == i && c.getAttribute("class").includes(answer[j])) {
-					bp++;
-				}else if(j != i && c.getAttribute("class").includes(answer[j])) {
+		if(c == null) {return;}
+
+
+		if(c.getAttribute("class").includes(answer[i])) {
+			bp++;
+			console.log(i);
+		}else{
+			for(var j = 0; j < 4; j++) {
+				if(c.getAttribute("class").includes(answer[j])) {
 					wp++;
+					break;
+					console.log(i);
 				}
 			}
 		}
@@ -93,6 +104,8 @@ function nextRow() {
 		}
 	}else{
 		document.getElementById("log").innerHTML = "You've won!";
+		document.getElementById("rowButton").innerHTML = "Restart";
+		document.getElementById("rowButton").setAttribute("onclick", "start();");
 	}
 }
 
