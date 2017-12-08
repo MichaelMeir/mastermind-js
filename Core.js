@@ -3,8 +3,14 @@ var answer;
 
 var currentRow = -1;
 
+window.onload = new function() {
+	document.getElementById("colorSelection").style.display = "none";
+}
+
 function start() {
 	currentRow = -1;
+	document.getElementById("tutorial").style.display = "none";
+	document.getElementById("colorSelection").style.display = "block";
 	document.getElementById("log").innerHTML = "";
 	answer = [];
 	for(var i = 0; i < 4; i++) {

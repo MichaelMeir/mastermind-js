@@ -47,6 +47,10 @@ button.start {
 	font-size: 20px;
 }
 
+li {
+	font-size: 18px;
+}
+
 .dis {
 	background-color: gray !important;
 }
