@@ -40,19 +40,20 @@ function start() {
 
 }
 
-var selectedPoint;
+var selectedColor;
 
 function openColor(point) {
 	if(point.split("r")[0] == currentRow) {
-		selectedPoint = point;
-	}else{
-		selectedPoint = null;
+		document.getElementById(point).setAttribute("class", "option " + getColor(selectedColor));
 	}
 }
 
 function setColor(color) {
-	if(selectedPoint != null) {
-		document.getElementById(selectedPoint).setAttribute("class", "option " + getColor(color));
+	selectedColor = color;
+	document.getElementsByTagName("main")[0].setAttribute("style", "cursor: url('resources/" + getColor(color) +".png'), auto");
+
+	for(var i = 0; i < document.getElementsByClassName("option").length; i++) {
+		document.getElementsByClassName("option")[i].setAttribute("style", "cursor: url('resources/" + getColor(color) +".png'), auto");
 	}
 }
 
